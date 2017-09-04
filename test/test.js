@@ -6,7 +6,11 @@ const countries = require('i18n-iso-countries');
 const country = require('..');
 
 const bad = [];
-test.before(() => {
+test.before('Throw error if doesn\'t use any geojson', async t => {
+  await t.throws(country.getCountryCodes({
+    lng: 0,
+    lat: 0
+  }));
   country.use(require('world-countries-boundaries-1m')());
 });
 
@@ -28,6 +32,16 @@ city.features.forEach(c => {
   });
 });
 
+test('33.396877N, -38.570712W should be in interntional waters', async t => {
+  await country.getCountryCodes({
+    lng: -38.570712,
+    lat: 33.396877
+  })
+  .then(result => {
+    t.is(result.length, 0);
+  })
+  .catch(err => t.fail(err.message));
+});
 test.after.always(() => {
   if (bad.length !== 0) {
     const out = {
