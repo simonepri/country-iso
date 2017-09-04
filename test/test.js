@@ -46,11 +46,11 @@ test.after.always(() => {
         throw err;
       }
     }
-    fs.writeFileSync('./test/out/failed-get-country.json', JSON.stringify(out, null, 2), err => {
+    fs.writeFileSync('./test/out/failed-country-code.json', JSON.stringify(out, null, 2), err => {
       if (err) {
         throw err;
       }
-      console.log('Cities with wrong country can be found in the geojson "log/failed-get-country.json"');
+      console.log('Cities with wrong country can be found in the geojson "log/failed-country-code.json"');
     });
   }
 });
