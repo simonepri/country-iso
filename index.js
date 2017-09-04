@@ -7,8 +7,8 @@ const PolygonLookup = require('polygon-lookup');
  * geojson must be a valid GeoJson FeatureCollection.
  * Each feature must have a 'ISO_A3' as property
  * For an example @see {@link https://github.com/busrapidohq/world-countries-boundaries}
- * @param  {[type]} geojson a FeatureCollection
- * @return {[type]}         [description]
+ * @param  {Object} geojson a FeatureCollection
+ * @return
  */
 module.exports.use = function (geojson) {
   this.worldGeojson = geojson;
@@ -16,9 +16,11 @@ module.exports.use = function (geojson) {
 };
 
 /**
+ * Searches for every country which contains the point (lat, lng) and
+ * returns an array of ISO 3166 alpha-3 country code for the geographic coordinates
  * @param {Number} lat  latitude of the point
  * @param {Number} lng  longitude of the point
- * @returns an array of ISO 3166 alpha-3 country code for the geographic coordinates
+ * @return {Array} an array of String
  */
 module.exports.get = function (lat, lng) {
   return new Promise((resolve, reject) => {
