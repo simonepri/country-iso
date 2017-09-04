@@ -3,8 +3,11 @@
 const PolygonLookup = require('polygon-lookup');
 
 /**
- * Use geojson for searches
- * @param  {[type]} geojson a FeatureCollection, each feature must have a 'ISO_A3' as property
+ * Pre computes an R-Tree from the geojson file and uses the data future queries
+ * geojson must be a valid GeoJson FeatureCollection.
+ * Each feature must have a 'ISO_A3' as property
+ * For an example @see {@link https://github.com/busrapidohq/world-countries-boundaries}
+ * @param  {[type]} geojson a FeatureCollection
  * @return {[type]}         [description]
  */
 module.exports.use = function (geojson) {
