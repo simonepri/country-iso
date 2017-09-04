@@ -5,8 +5,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "polygon-lookup": "^2.2.0",
-    "world-countries-boundaries-5km": "^1.0.5"
+    "polygon-lookup": "^2.2.0"
   },
   "devDependencies": {
     "ava": "*",
@@ -56,5 +55,6 @@
   "homepage": "https://github.com/busrapidohq/get-country#readme",
   "xo": {
     "space": true
+
   }
 }
