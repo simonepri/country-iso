@@ -13,15 +13,16 @@ module.exports.use = function (geojson) {
 };
 
 /**
- * @param {LatLng} latlng
+ * @param {Number} lat  latitude of the point
+ * @param {Number} lng  longitude of the point
  * @returns an array of ISO 3166 alpha-3 country code for the geographic coordinates
  */
-module.exports.getCountryCodes = function (latlng) {
+module.exports.get = function (lat, lng) {
   return new Promise((resolve, reject) => {
     if (this.worldGeojson === undefined) {
       reject(new Error('No geographical data loaded'));
     }
-    const countries = this.worldLookup.search(latlng.lng, latlng.lat, -1);
+    const countries = this.worldLookup.search(lng, lat, -1);
     resolve(countries.features.map(f => f.properties.ISO_A3));
   });
 };
