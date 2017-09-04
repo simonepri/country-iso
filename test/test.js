@@ -6,9 +6,8 @@ const countries = require('i18n-iso-countries');
 const country = require('..');
 
 const bad = [];
-test.before(t => {
-  country.use(require('world-countries-boundaries-5km')());
-  t.pass();
+test.before(() => {
+  country.use(require('world-countries-boundaries-1m')());
 });
 
 city.features.forEach(c => {
@@ -29,7 +28,7 @@ city.features.forEach(c => {
   });
 });
 
-test.after.always(t => {
+test.after.always(() => {
   if (bad.length !== 0) {
     const out = {
       type: 'FeatureCollection',
@@ -49,5 +48,4 @@ test.after.always(t => {
       console.log('Cities with wrong country can be found in the geojson "log/failed-get-country.json"');
     });
   }
-  t.pass();
 });
