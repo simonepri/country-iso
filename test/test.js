@@ -6,7 +6,7 @@ const countries = require('i18n-iso-countries');
 const country = require('..');
 
 const bad = [];
-test.before('Throw error if doesn\'t use any geojson', async t => {
+test.before('Throw error if doesn\'t use any GeoJSON', async t => {
   await t.throws(country.get(0, 0));
   country.use(require('world-countries-boundaries-1m')());
 });
@@ -50,7 +50,7 @@ test.after.always(() => {
       if (err) {
         throw err;
       }
-      console.log('Cities with wrong country can be found in the geojson "log/failed-country-code.json"');
+      console.log('Cities with wrong country can be found in the GeoJSON "log/failed-country-code.json"');
     });
   }
 });

@@ -13,7 +13,7 @@ $ npm install --save country-code
 ```javascript
 const countryCode = require('country-code');
 
-// Load a geogejson with country boundaries
+// Load a GeoJSON with country boundaries
 countryCode.use(require('world-countries-boundaries-1m')());
 
 // query a point
@@ -22,9 +22,9 @@ countryCode.get(42.50779, 1.52109);
 ```
 
 ## API
-### .use(geojson)
-Load a geojson and preprocess the data to speed up future queries
-- *geojson*, Object, a GeoJson FeatureCollection. You can get one with customizable accuracy at https://github.com/busrapidohq/world-country-boundaries
+### .use(geoJson)
+Load a geoJson and preprocess the data to speed up future queries
+- *geoJson*, Object, a GeoJson FeatureCollection. You can get one with customizable accuracy at https://github.com/busrapidohq/world-country-boundaries
 ### .get(lat, lng)
 Get an array of country codes for a point.
 A point could be within country borders.
