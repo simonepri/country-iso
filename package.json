@@ -5,12 +5,15 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "polygon-lookup": "^2.2.0"
+    "polygon-lookup": "^2.2.0",
+    "world-countries-boundaries-5km": "^1.0.5"
   },
   "devDependencies": {
     "ava": "*",
     "codecov": "^2.2.0",
+    "i18n-iso-countries": "^2.0.1",
     "nyc": "^11.0.3",
+    "world-countries-boundaries-10km": "^1.0.4",
     "xo": "*"
   },
   "engines": {
