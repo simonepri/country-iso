@@ -6,7 +6,9 @@
 
 ```
 $ npm install --save country-code
+$ npm install --save world-countries-boundaries-5m
 ```
+We recommand you to install one of the `world-countries-boundaries-*` packages
 
 ## Usage
 
