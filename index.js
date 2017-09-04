@@ -17,13 +17,14 @@ module.exports.use = function (geojson) {
 
 /**
  * @param {LatLng} latlng
- * @returns ISO 3166 alpha-3 country code for geographic coordinates
+ * @returns an array of ISO 3166 alpha-3 country code for the geographic coordinates
  */
-module.exports.getCountry = function (latlng) {
+module.exports.getCountryCodes = function (latlng) {
   return new Promise((resolve, reject) => {
     if (worldGeojson === undefined) {
       reject(new Error('No geographical data loaded'));
     }
-    resolve(worldLookup.search(latlng.lng, latlng.lat));
+    const countries = worldLookup.search(latlng.lng, latlng.lat, -1);
+    resolve(countries.features.map(f => f.properties.ISO_A3));
   });
 };
