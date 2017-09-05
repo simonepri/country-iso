@@ -16,13 +16,13 @@ You can get one with customizable accuracy from [world-countries-boundaries](htt
 ## Usage
 
 ```javascript
-const countryCode = require('country-iso');
+const countryIso = require('country-iso');
 
 // Load a GeoJSON with country boundaries
-countryCode.use(require('world-countries-boundaries-1m')());
+countryIso.use(require('world-countries-boundaries-1m')());
 
 // query a point
-countryCode.get(42.50779, 1.52109);
+countryIso.get(42.50779, 1.52109);
 // => 'AD'
 ```
 
