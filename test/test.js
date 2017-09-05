@@ -5,7 +5,7 @@ const city = require('./fixtures/cities.json');
 const countries = require('i18n-iso-countries');
 const country = require('..');
 
-const report = './test/report/failed-get-country.geo.json';
+const report = './test/report/failed-get.geo.json';
 const failed = [];
 test.before('Throw error if doesn\'t use any GeoJSON', async t => {
   await t.throws(country.get(0, 0));
@@ -14,16 +14,13 @@ test.before('Throw error if doesn\'t use any GeoJSON', async t => {
 
 city.features.forEach(c => {
   test(`${c.properties.name} should have country code ${c.properties.iso_a2}`, async t => {
-    await country.get(c.geometry.coordinates[1], c.geometry.coordinates[0])
-    .then(result => {
-      t.not(result, undefined);
-      const comp = result.some(e => countries.alpha3ToAlpha2(e) === c.properties.iso_a2);
-      if (!comp) {
-        failed.push(c);
-      }
-      t.true(result.some(e => countries.alpha3ToAlpha2(e) === c.properties.iso_a2));
-    })
-    .catch(err => t.fail(err.message));
+    const result = await country.get(c.geometry.coordinates[1], c.geometry.coordinates[0]);
+    t.not(result, undefined);
+    const comp = result.some(e => countries.alpha3ToAlpha2(e) === c.properties.iso_a2);
+    if (!comp) {
+      failed.push(c);
+    }
+    t.true(result.some(e => countries.alpha3ToAlpha2(e) === c.properties.iso_a2));
   });
 });
 
