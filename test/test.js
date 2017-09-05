@@ -1,7 +1,7 @@
 import test from 'ava';
 
 const fs = require('fs-extra');
-const city = require('./fixtures/cities.json');
+const city = require('./fixtures/cities.geo.json');
 const countries = require('i18n-iso-countries');
 const country = require('..');
 
