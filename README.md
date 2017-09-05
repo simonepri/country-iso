@@ -22,7 +22,7 @@ countryCode.use(require('world-countries-boundaries-1m')());
 
 // query a point
 countryCode.get(42.50779, 1.52109);
-// > 'AD'
+// => 'AD'
 ```
 
 ## API
