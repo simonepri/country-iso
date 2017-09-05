@@ -5,7 +5,7 @@ const city = require('./fixtures/cities.json');
 const countries = require('i18n-iso-countries');
 const country = require('..');
 
-const report = './test/report/failed-get-country.geo.json'
+const report = './test/report/failed-get-country.geo.json';
 const failed = [];
 test.before('Throw error if doesn\'t use any GeoJSON', async t => {
   await t.throws(country.get(0, 0));

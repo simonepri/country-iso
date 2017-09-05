@@ -14,8 +14,7 @@ module.exports.use = function (geoJson) {
 };
 
 /**
- * Searches for every country which contains the point (lat, lng) and
- * returns 
+ * Searches for every country which contains the point (lat, lng)
  * @param {Number} lat  Latitude of the point
  * @param {Number} lng  Longitude of the point
  * @return {String[]} Array of ISO 3166 alpha-3 country code for the geographic coordinates
