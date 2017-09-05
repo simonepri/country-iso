@@ -8,7 +8,7 @@ const PolygonLookup = require('polygon-lookup');
  * @param  {Object} geoJson Valid GeoJSON FeatureCollection, each feature must have .properties.ISO_A3
  * @return
  */
-function use(geoJson) {
+function useGeoJSON(geoJson) {
   this.worldGeojson = geoJson;
   this.worldLookup = new PolygonLookup(this.worldGeojson);
 }
@@ -19,7 +19,7 @@ function use(geoJson) {
  * @param {Number} lng  Longitude of the point
  * @return {String[]} Array of ISO 3166 alpha-3 country code for the geographic coordinates
  */
-function get(lat, lng) {
+function getCode(lat, lng) {
   return new Promise((resolve, reject) => {
     if (this.worldGeojson === undefined) {
       reject(new Error('No geographical data loaded'));
@@ -30,6 +30,6 @@ function get(lat, lng) {
 }
 
 module.exports = {
-  use,
-  get
+  use: useGeoJSON,
+  get: getCode
 };
