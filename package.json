@@ -13,7 +13,7 @@
     "fs-extra": "^4.0.1",
     "i18n-iso-countries": "^2.0.1",
     "nyc": "^11.0.3",
-    "world-countries-boundaries-1m": "^1.0.6",
+    "world-countries-boundaries-100m": "^1.0.7",
     "xo": "*"
   },
   "engines": {
