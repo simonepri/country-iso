@@ -11,7 +11,7 @@ const PolygonLookup = require('polygon-lookup');
 function use(geoJson) {
   this.worldGeojson = geoJson;
   this.worldLookup = new PolygonLookup(this.worldGeojson);
-};
+}
 
 /**
  * Searches for every country which contains the point (lat, lng)
@@ -27,7 +27,7 @@ function get(lat, lng) {
     const countries = this.worldLookup.search(lng, lat, -1);
     resolve(countries.features.map(f => f.properties.ISO_A3));
   });
-};
+}
 
 module.exports = {
   use,
