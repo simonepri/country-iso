@@ -1,11 +1,12 @@
 import test from 'ava';
 
-const fs = require('fs');
+const fs = require('fs-extra');
 const city = require('./fixtures/cities.json');
 const countries = require('i18n-iso-countries');
 const country = require('..');
 
-const bad = [];
+const report = './test/report/failed-get-country.geo.json'
+const failed = [];
 test.before('Throw error if doesn\'t use any GeoJSON', async t => {
   await t.throws(country.get(0, 0));
   country.use(require('world-countries-boundaries-1m')());
@@ -18,7 +19,7 @@ city.features.forEach(c => {
       t.not(result, undefined);
       const comp = result.some(e => countries.alpha3ToAlpha2(e) === c.properties.iso_a2);
       if (!comp) {
-        bad.push(c);
+        failed.push(c);
       }
       t.true(result.some(e => countries.alpha3ToAlpha2(e) === c.properties.iso_a2));
     })
@@ -33,24 +34,13 @@ test('33.396877N, -38.570712W should be in interntional waters', async t => {
   })
   .catch(err => t.fail(err.message));
 });
-test.after.always(() => {
-  if (bad.length !== 0) {
+
+test.after.always(async () => {
+  if (failed.length !== 0) {
     const out = {
       type: 'FeatureCollection',
-      features: bad
+      features: failed
     };
-    try {
-      fs.mkdirSync('./test/out');
-    } catch (err) {
-      if (err.code !== 'EEXIST') {
-        throw err;
-      }
-    }
-    fs.writeFileSync('./test/out/failed-country-code.json', JSON.stringify(out, null, 2), err => {
-      if (err) {
-        throw err;
-      }
-      console.log('Cities with wrong country can be found in the GeoJSON "log/failed-country-code.json"');
-    });
+    await fs.outputJson(report, out, {spaces: 2});
   }
 });
