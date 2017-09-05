@@ -1,6 +1,6 @@
 # country-iso
 [![Travis CI](https://travis-ci.org/busrapidohq/country-iso.svg?branch=master)](https://travis-ci.org/busrapidohq/country-iso) [![Codecov](https://img.shields.io/codecov/c/github/busrapidohq/country-iso/master.svg)](https://codecov.io/gh/busrapidohq/country-iso) [![npm](https://img.shields.io/npm/dm/country-iso.svg)](https://www.npmjs.com/package/country-iso) [![npm version](https://img.shields.io/npm/v/country-iso.svg)](https://www.npmjs.com/package/country-iso) [![npm dependencies](https://david-dm.org/busrapidohq/country-iso.svg)](https://david-dm.org/busrapidohq/country-iso) [![npm dev dependencies](https://david-dm.org/busrapidohq/country-iso/dev-status.svg)](https://david-dm.org/busrapidohq/country-iso#info=devDependencies)
-🗺 Get ISO 3166-1 alpha-3 country code for geographic coordinates.
+> 🗺 Get ISO 3166-1 alpha-3 country code for geographic coordinates.
 
 ## Install
 
@@ -22,18 +22,35 @@ countryCode.use(require('world-countries-boundaries-1m')());
 
 // query a point
 countryCode.get(42.50779, 1.52109);
-// > 'AD'
+// => 'AD'
 ```
 
 ## API
-### .use(geoJson)
-Load a geoJson and preprocess the data to speed up future queries
-- *geoJson*, Object, a GeoJson FeatureCollection. You can get one with customizable accuracy at https://github.com/busrapidohq/world-country-boundaries
-### .get(lat, lng)
-Get an array of country codes for a point.
-A point could be within country borders.
-- *lat*, Number, latitude
-- *lng*, Number, longitude
+### use(geoJson)
+
+Pre computes an R-Tree from a GeoJSON Object and uses the data future queries.
+
+#### geoJson
+
+Type: `object`
+
+A valid GeoJSON FeatureCollection, each feature must have the `ISO_A3` property.
+### get(lat, lng)
+
+Searches for every country which contains the point (lat, lng).
+
+#### lat
+
+Type: `number`
+
+Latitude of the point.
+
+#### lng
+
+Type: `number`
+
+Longitude of the point.
+
 ## Authors
 * **Matteo Chen** - [chq-matteo](https://github.com/chq-matteo)
 * **Simone Primarosa** - [simonepri](https://github.com/simonepri)
