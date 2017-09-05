@@ -15,10 +15,10 @@ module.exports.use = function (geoJson) {
 
 /**
  * Searches for every country which contains the point (lat, lng) and
- * returns an array of ISO 3166 alpha-3 country code for the geographic coordinates
- * @param {Number} lat  latitude of the point
- * @param {Number} lng  longitude of the point
- * @return {Array} an array of String
+ * returns 
+ * @param {Number} lat  Latitude of the point
+ * @param {Number} lng  Longitude of the point
+ * @return {String[]} Array of ISO 3166 alpha-3 country code for the geographic coordinates
  */
 module.exports.get = function (lat, lng) {
   return new Promise((resolve, reject) => {
