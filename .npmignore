@@ -1,5 +1,5 @@
 #tests
-test.js
+test
 
 #build tools
 .travis.yml
@@ -21,7 +21,3 @@ CODE_OF_CONDUCT.md
 # nyc test coverage
 coverage
 .nyc_output
-
-# others
-utils
-geojson

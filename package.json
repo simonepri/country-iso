@@ -1,5 +1,5 @@
 {
-  "name": "get-country",
+  "name": "country-iso",
   "version": "1.0.0",
   "description": "Get ISO 3166-1 alpha-3 country code for geographic coordinates.",
   "main": "index.js",
@@ -10,6 +10,7 @@
   "devDependencies": {
     "ava": "*",
     "codecov": "^2.2.0",
+    "fs-extra": "^4.0.1",
     "i18n-iso-countries": "^2.0.1",
     "nyc": "^11.0.3",
     "world-countries-boundaries-1m": "^1.0.6",
@@ -24,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/busrapidohq/get-country.git"
+    "url": "git+https://github.com/busrapidohq/country-iso.git"
   },
   "author": {
     "name": "Simone Primarosa",
@@ -50,9 +51,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/busrapidohq/get-country/issues"
+    "url": "https://github.com/busrapidohq/country-iso/issues"
   },
-  "homepage": "https://github.com/busrapidohq/get-country#readme",
+  "homepage": "https://github.com/busrapidohq/country-iso#readme",
   "xo": {
     "space": true
   }

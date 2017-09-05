@@ -3,25 +3,33 @@
 const PolygonLookup = require('polygon-lookup');
 
 /**
- * Use geojson for searches
- * @param  {[type]} geojson a FeatureCollection, each feature must have a 'ISO_A3' as property
- * @return {[type]}         [description]
+ * Pre computes an R-Tree from a GeoJSON Object and uses the data future queries
+ * For an example @see {@link https://github.com/busrapidohq/world-countries-boundaries}
+ * @param  {Object} geoJson Valid GeoJSON FeatureCollection, each feature must have .properties.ISO_A3
+ * @return
  */
-module.exports.use = function (geojson) {
-  this.worldGeojson = geojson;
+function use(geoJson) {
+  this.worldGeojson = geoJson;
   this.worldLookup = new PolygonLookup(this.worldGeojson);
-};
+}
 
 /**
- * @param {LatLng} latlng
- * @returns an array of ISO 3166 alpha-3 country code for the geographic coordinates
+ * Searches for every country which contains the point (lat, lng)
+ * @param {Number} lat  Latitude of the point
+ * @param {Number} lng  Longitude of the point
+ * @return {String[]} Array of ISO 3166 alpha-3 country code for the geographic coordinates
  */
-module.exports.getCountryCodes = function (latlng) {
+function get(lat, lng) {
   return new Promise((resolve, reject) => {
     if (this.worldGeojson === undefined) {
       reject(new Error('No geographical data loaded'));
     }
-    const countries = this.worldLookup.search(latlng.lng, latlng.lat, -1);
+    const countries = this.worldLookup.search(lng, lat, -1);
     resolve(countries.features.map(f => f.properties.ISO_A3));
   });
+}
+
+module.exports = {
+  use,
+  get
 };
