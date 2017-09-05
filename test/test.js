@@ -9,7 +9,7 @@ const report = './test/report/failed-get.geo.json';
 const failed = [];
 test.before('Throw error if doesn\'t use any GeoJSON', async t => {
   await t.throws(country.get(0, 0));
-  country.use(require('world-countries-boundaries-1m')());
+  country.use(require('world-countries-boundaries-100m')());
 });
 
 city.features.forEach(c => {
