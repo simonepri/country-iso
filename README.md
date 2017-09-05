@@ -35,11 +35,22 @@ Pre computes an R-Tree from a GeoJSON Object and uses the data future queries.
 Type: `object`
 
 A valid GeoJSON FeatureCollection, each feature must have the `ISO_A3` property.
-### .get(lat, lng)
-Get an array of country codes for a point.
-A point could be within country borders.
-- *lat*, Number, latitude
-- *lng*, Number, longitude
+### get(lat, lng)
+
+Searches for every country which contains the point (lat, lng).
+
+#### lat
+
+Type: `number`
+
+Latitude of the point.
+
+#### lng
+
+Type: `number`
+
+Longitude of the point.
+
 ## Authors
 * **Matteo Chen** - [chq-matteo](https://github.com/chq-matteo)
 * **Simone Primarosa** - [simonepri](https://github.com/simonepri)
