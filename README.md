@@ -1,6 +1,7 @@
 # country-code
-[![Travis CI](https://travis-ci.org/busrapidohq/country-code.svg?branch=master)](https://travis-ci.org/busrapidohq/country-code) [![Codecov](https://img.shields.io/codecov/c/github/busrapidohq/country-code/master.svg)](https://codecov.io/gh/busrapidohq/country-code) [![npm](https://img.shields.io/npm/dm/country-code.svg)](https://www.npmjs.com/package/country-code) [![npm version](https://img.shields.io/npm/v/country-code.svg)](https://www.npmjs.com/package/country-code) [![npm dependencies](https://david-dm.org/busrapidohq/country-code.svg)](https://david-dm.org/busrapidohq/country-code) [![npm dev dependencies](https://david-dm.org/busrapidohq/country-code/dev-status.svg)](https://david-dm.org/busrapidohq/country-code#info=devDependencies)
-🗺 Get ISO 3166-1 alpha-3 country code for geographic coordinates.
+[![Travis CI](https://travis-ci.org/busrapidohq/country-code.svg?branch=master)](https://travis-ci.org/busrapidohq/country-code) [![Codecov](https://img.shields.io/codecov/c/github/busrapidohq/country-code/master.svg)](https://codecov.io/gh/busrapidohq/country-code) [![npm](https://img.shields.io/npm/dm/country-code.svg)](https://www.npmjs.com/package/country-code) [![npm version](https://img.shields.io/npm/v/country-code.svg)](https://www.npmjs.com/package/country-code) [![npm dependencies](https://david-dm.org/busrapidohq/country-code.svg)](https://david-dm.org/busrapidohq/country-code) [![npm dev dependencies](https://david-dm.org/busrapidohq/country-code/dev-status.svg)](https://david-dm.org/busrapidohq/country-code#info=devDependencies)  
+
+> 🗺 Get ISO 3166-1 alpha-3 country code for geographic coordinates.
 
 ## Install
 
