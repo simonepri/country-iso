@@ -4,11 +4,13 @@
 
 ## Install
 
-```
+```bash
 $ npm install --save country-code
-$ npm install --save world-countries-boundaries-5m
+$ npm install --save world-countries-boundaries-100m
 ```
-We recommand you to install one of the `world-countries-boundaries-*` packages
+## Countries bounds map file
+In order to use this package you need to provide a valid `GeoJSON` FeatureCollection object with the `ISO_A3` property set for each country.
+You can get one with customizable accuracy from [world-countries-boundaries](https://github.com/busrapidohq/world-countries-boundaries) repo.
 
 ## Usage
 
