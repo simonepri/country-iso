@@ -5,7 +5,7 @@ const PolygonLookup = require('polygon-lookup');
 /**
  * Pre computes an R-Tree from a GeoJSON Object and uses the data future queries
  * For an example @see {@link https://github.com/busrapidohq/world-countries-boundaries}
- * @param  {Object} geoJson Valid GeoJSON FeatureCollection
+ * @param  {Object} geoJson Valid GeoJSON FeatureCollection, each feature must have .properties.ISO_A3
  * @return
  */
 module.exports.use = function (geoJson) {
