@@ -26,9 +26,15 @@ countryCode.get(42.50779, 1.52109);
 ```
 
 ## API
-### .use(geoJson)
-Load a geoJson and preprocess the data to speed up future queries
-- *geoJson*, Object, a GeoJson FeatureCollection. You can get one with customizable accuracy at https://github.com/busrapidohq/world-country-boundaries
+### use(geoJson)
+
+Pre computes an R-Tree from a GeoJSON Object and uses the data future queries.
+
+#### geoJson
+
+Type: `object`
+
+A valid GeoJSON FeatureCollection, each feature must have the `ISO_A3` property.
 ### .get(lat, lng)
 Get an array of country codes for a point.
 A point could be within country borders.
