@@ -17,7 +17,7 @@ function useGeoJSON(geoJson) {
  * Searches for every country which contains the point (lat, lng)
  * @param {Number} lat  Latitude of the point
  * @param {Number} lng  Longitude of the point
- * @return {String[]} Array of ISO 3166 alpha-3 country code for the geographic coordinates
+ * @return {Promise<String[]>} Promises an array of ISO 3166 alpha-3 country code for the geographic coordinates
  */
 function getCode(lat, lng) {
   return new Promise((resolve, reject) => {
