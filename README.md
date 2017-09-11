@@ -22,8 +22,8 @@ const countryIso = require('country-iso');
 countryIso.use(require('world-countries-boundaries-1m')());
 
 // query a point
-countryIso.get(42.50779, 1.52109);
-// => 'AD'
+countryIso.get(42.50779, 1.52109).then(codes => console.log(codes));
+// => ['AD']
 ```
 
 ## API
@@ -38,7 +38,7 @@ Type: `object`
 A valid GeoJSON FeatureCollection, each feature must have the `ISO_A3` property.
 ### get(lat, lng)
 
-Searches for every country which contains the point (lat, lng).
+Searches for every country which contains the point (lat, lng). **Returns a Promise**
 
 #### lat
 
