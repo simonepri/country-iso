@@ -35,7 +35,7 @@ function getCode(lat, lng) {
  * @param {Number} lng  Longitude of the point
  * @return {String[]}  Array of ISO 3166 alpha-3 country code for the geographic coordinates
  */
-function getCode(lat, lng) {
+function getCodeSync(lat, lng) {
   if (this.worldGeojson === undefined) {
     throw new Error('No geographical data loaded');
   }
