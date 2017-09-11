@@ -51,6 +51,21 @@ Latitude of the point.
 Type: `number`
 
 Longitude of the point.
+### getSync(lat, lng)
+
+Searches for every country which contains the point (lat, lng).
+
+#### lat
+
+Type: `number`
+
+Latitude of the point.
+
+#### lng
+
+Type: `number`
+
+Longitude of the point.
 
 ## Authors
 * **Matteo Chen** - [chq-matteo](https://github.com/chq-matteo)
