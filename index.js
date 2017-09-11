@@ -29,7 +29,22 @@ function getCode(lat, lng) {
   });
 }
 
+/**
+ * Searches for every country which contains the point (lat, lng)
+ * @param {Number} lat  Latitude of the point
+ * @param {Number} lng  Longitude of the point
+ * @return {String[]}  Array of ISO 3166 alpha-3 country code for the geographic coordinates
+ */
+function getCode(lat, lng) {
+  if (this.worldGeojson === undefined) {
+    throw new Error('No geographical data loaded');
+  }
+  const countries = this.worldLookup.search(lng, lat, -1);
+  return countries.features.map(f => f.properties.ISO_A3);
+}
+
 module.exports = {
   use: useGeoJSON,
-  get: getCode
+  get: getCode,
+  getSync: getCodeSync
 };
