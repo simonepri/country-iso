@@ -8,12 +8,21 @@ $ npm install --save country-iso
 ```
 
 ## Usage
+You can query any `(lat,lng)` pair on the earth. It also works for territorial waters and disputed countries.
 ```javascript
 const countryIso = require('country-iso');
 
-// Query a point.
+// Query a point in Italy.
 countryIso.get(41.9028, 12.4964);
 // => ['ITA']
+
+// Query a disputed country.
+countryIso.get(24, -14);
+// => ['ESH', 'MAR']
+
+// Query a point somewhere in Atlantic Ocean.
+countryIso.get(40, -40);
+// => []
 ```
 
 > The accuracy of the maps has been tested with [23785 cities](fixtures/cities.geo.json).
