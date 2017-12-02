@@ -59,5 +59,11 @@
   "homepage": "https://github.com/busrapidohq/country-iso#readme",
   "xo": {
     "space": true
-  }
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "package.json",
+    "index.js"
+  ]
 }
