@@ -2,6 +2,12 @@
 [![Travis CI](https://travis-ci.org/simonepri/country-iso.svg?branch=master)](https://travis-ci.org/simonepri/country-iso) [![Codecov](https://img.shields.io/codecov/c/github/simonepri/country-iso/master.svg)](https://codecov.io/gh/simonepri/country-iso) [![npm](https://img.shields.io/npm/dm/country-iso.svg)](https://www.npmjs.com/package/country-iso) [![npm version](https://img.shields.io/npm/v/country-iso.svg)](https://www.npmjs.com/package/country-iso) [![npm dependencies](https://david-dm.org/simonepri/country-iso.svg)](https://david-dm.org/simonepri/country-iso) [![npm dev dependencies](https://david-dm.org/simonepri/country-iso/dev-status.svg)](https://david-dm.org/simonepri/country-iso#info=devDependencies)
 > 🗺 Get ISO 3166-1 alpha-3 country code for geographic coordinates.
 
+<p align="center">
+  <a href="http://simonepri.github.io/country-iso/"><img src="https://raw.githubusercontent.com/simonepri/country-iso/master/demo/index.png" width="400"/></a>
+</p>
+
+> Click on the map for a live preview.
+
 ## Install
 ```bash
 $ npm install --save country-iso
