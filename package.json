@@ -27,13 +27,16 @@
     "type": "git",
     "url": "git+https://github.com/busrapidohq/country-iso.git"
   },
-  "author": [{
-    "name": "Q. Matteo Chen",
-    "email": "chq.matteo@gmail.com"
-  }, {
-    "name": "Simone Primarosa",
-    "email": "simone.pri@hotmail.it"
-  }],
+  "author": [
+    {
+      "name": "Q. Matteo Chen",
+      "email": "chq.matteo@gmail.com"
+    },
+    {
+      "name": "Simone Primarosa",
+      "email": "simone.pri@hotmail.it"
+    }
+  ],
   "keywords": [
     "country",
     "countries",
