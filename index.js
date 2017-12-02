@@ -1,50 +1,33 @@
 'use strict';
 
 const PolygonLookup = require('polygon-lookup');
+const getMap = require('@geo-maps/countries-maritime-10m');
+
+let worldGeoJson = null;
+let worldLookup = null;
 
 /**
- * Pre computes an R-Tree from a GeoJSON Object and uses the data future queries
- * For an example @see {@link https://github.com/busrapidohq/world-countries-boundaries}
- * @param  {Object} geoJson Valid GeoJSON FeatureCollection, each feature must have .properties.ISO_A3
- * @return
- */
-function useGeoJSON(geoJson) {
-  this.worldGeojson = geoJson;
-  this.worldLookup = new PolygonLookup(this.worldGeojson);
-}
-
-/**
- * Searches for every country which contains the point (lat, lng)
- * @param {Number} lat  Latitude of the point
- * @param {Number} lng  Longitude of the point
- * @return {Promise<String[]>} Promises an array of ISO 3166 alpha-3 country code for the geographic coordinates
+ * Searches for every country which contains the point (lat, lng).
+ * @public
+ * @param {number} lat  The latitude of the point.
+ * @param {number} lng  The longitude of the point.
+ * @return {string[]}  Array of ISO 3166 alpha-3 country code for the geographic
+ *  coordinates.
  */
 function getCode(lat, lng) {
-  return new Promise((resolve, reject) => {
-    if (this.worldGeojson === undefined) {
-      reject(new Error('No geographical data loaded'));
-    }
-    const countries = this.worldLookup.search(lng, lat, -1);
-    resolve(countries.features.map(f => f.properties.ISO_A3));
-  });
-}
-
-/**
- * Searches for every country which contains the point (lat, lng)
- * @param {Number} lat  Latitude of the point
- * @param {Number} lng  Longitude of the point
- * @return {String[]}  Array of ISO 3166 alpha-3 country code for the geographic coordinates
- */
-function getCodeSync(lat, lng) {
-  if (this.worldGeojson === undefined) {
-    throw new Error('No geographical data loaded');
+  if (worldGeoJson === null) {
+    worldGeoJson = getMap();
+    worldLookup = new PolygonLookup(worldGeoJson);
   }
-  const countries = this.worldLookup.search(lng, lat, -1);
-  return countries.features.map(f => f.properties.ISO_A3);
+
+  const countries = worldLookup.search(lng, lat, -1);
+
+  if (countries && countries.features && countries.features.length > 0) {
+    return countries.features.map(f => f.properties.A3);
+  }
+  return [];
 }
 
 module.exports = {
-  use: useGeoJSON,
-  get: getCode,
-  getSync: getCodeSync
+  get: getCode
 };
