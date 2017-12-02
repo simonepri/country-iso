@@ -23,7 +23,7 @@
   "scripts": {
     "test": "xo && nyc ava --verbose",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "build-demo": "browserify demo/script.js > demo/index.js"
+    "build-demo": "browserify demo.js > demo/index.js"
   },
   "repository": {
     "type": "git",

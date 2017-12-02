@@ -1,6 +1,6 @@
 const leaflet = require('leaflet');
 const ci18n = require('i18n-iso-countries');
-const countryIso = require('../');
+const countryIso = require('.');
 
 ci18n.registerLocale(require('i18n-iso-countries/langs/en.json'));
 
