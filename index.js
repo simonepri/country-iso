@@ -23,7 +23,7 @@ function getCode(lat, lng) {
   const countries = worldLookup.search(lng, lat, -1);
 
   if (countries && countries.features && countries.features.length > 0) {
-    return countries.features.map(f => f.properties.A3);
+    return [...new Set(countries.features.map(f => f.properties.A3))];
   }
   return [];
 }

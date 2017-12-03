@@ -29,6 +29,14 @@ test('41.9028N, 12.4964W should be in italy', t => {
   t.is(countries[0], 'ITA');
 });
 
+test('43.9448N, 12.4700W should not return duplicate codes for MultiPolygon countries', t => {
+  const countries = m.get(43.9448, 12.4700);
+
+  t.true(Array.isArray(countries));
+  t.is(countries.length, 2);
+  t.true(countries[0] !== countries[1]);
+});
+
 test('33.396877N, -38.570712W should be in interntional waters', t => {
   const countries = m.get(33.396877, -38.570712);
 
