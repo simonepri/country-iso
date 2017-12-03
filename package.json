@@ -63,7 +63,17 @@
   },
   "homepage": "https://github.com/simonepri/country-iso#readme",
   "xo": {
-    "space": true
+    "space": true,
+    "ignores": [
+      "demo/**",
+      "fixtures/**"
+    ]
+  },
+  "ava": {
+    "match": [
+      "!demo/**",
+      "!fixtures/**"
+    ]
   },
   "files": [
     "LICENSE",
