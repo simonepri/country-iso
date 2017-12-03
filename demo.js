@@ -18,6 +18,7 @@ map.on('click', e => {
 });
 
 function showInfo(map, latlng) {
+  latlng = latlng.wrap();
   const isocodes = countryIso.get(latlng.lat, latlng.lng);
   const cnames = isocodes.map(iso => ci18n.getName(iso, 'en'));
 
