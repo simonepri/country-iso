@@ -15,6 +15,7 @@ $ npm install --save country-iso
 
 ## Usage
 You can query any `(lat,lng)` pair on the earth. It also works for territorial waters and disputed countries.
+
 ```javascript
 const countryIso = require('country-iso');
 
@@ -30,8 +31,9 @@ countryIso.get(24, -14);
 countryIso.get(40, -40);
 // => []
 ```
+> The package internally uses [@geo-maps/countries-maritime](https://github.com/simonepri/geo-maps/blob/master/info/countries-maritime.md) map with 10m resolution.
 
-> The accuracy of the maps has been tested with [23785 cities](fixtures/cities.geo.json).
+> The accuracy of the map has been tested with [23785 cities](fixtures/cities.geo.json).
 
 ## API
 ## get(lat, lng) ⇒ <code>Array.&lt;string&gt;</code>
