@@ -13,7 +13,7 @@ let worldLookup = null;
  * @return {string[]}  Array of ISO 3166 alpha-3 country code for the geographic
  *  coordinates.
  */
-function getCode(lat, lng) {
+function getCodes(lat, lng) {
   if (worldLookup === null) {
     const map = getMap();
     worldLookup = new GeoJsonPolygonLookup(map);
@@ -29,5 +29,5 @@ function getCode(lat, lng) {
 }
 
 module.exports = {
-  get: getCode
+  get: getCodes
 };

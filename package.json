@@ -65,6 +65,7 @@
   "xo": {
     "space": true,
     "ignores": [
+      "demo.js",
       "demo/**",
       "fixtures/**"
     ]
