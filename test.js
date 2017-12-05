@@ -44,11 +44,10 @@ test('33.396877N, -38.570712W should be in interntional waters', t => {
   t.is(countries.length, 0);
 });
 
-cities.features.forEach(city => {
-  const name = city.properties.name;
-  const code = i18ncIsoCuntries.alpha2ToAlpha3(city.properties.iso_a2);
-
-  test(`${name} should have country code ${code}`, t => {
+test('Should have the corret country code for the whole dataset', t => {
+  cities.features.forEach(city => {
+    const name = city.properties.name;
+    const code = i18ncIsoCuntries.alpha2ToAlpha3(city.properties.iso_a2);
     const lat = city.geometry.coordinates[1];
     const lng = city.geometry.coordinates[0];
 
@@ -61,6 +60,6 @@ cities.features.forEach(city => {
       failed.features.push(city);
     }
 
-    t.true(comp);
+    t.true(comp, `${name} should have country code ${code}`);
   });
 });
