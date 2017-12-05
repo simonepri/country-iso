@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@geo-maps/countries-maritime-10m": "^0.6.0",
-    "polygon-lookup": "^2.2.0"
+    "geojson-geometries-lookup": "^0.2.0"
   },
   "devDependencies": {
     "ava": "*",

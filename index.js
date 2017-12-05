@@ -1,9 +1,8 @@
 'use strict';
 
-const PolygonLookup = require('polygon-lookup');
+const GeoJsonPolygonLookup = require('geojson-geometries-lookup');
 const getMap = require('@geo-maps/countries-maritime-10m');
 
-let worldGeoJson = null;
 let worldLookup = null;
 
 /**
@@ -15,14 +14,15 @@ let worldLookup = null;
  *  coordinates.
  */
 function getCode(lat, lng) {
-  if (worldGeoJson === null) {
-    worldGeoJson = getMap();
-    worldLookup = new PolygonLookup(worldGeoJson);
+  if (worldLookup === null) {
+    const map = getMap();
+    worldLookup = new GeoJsonPolygonLookup(map);
   }
 
-  const countries = worldLookup.search(lng, lat, -1);
+  const countries = worldLookup.getContainers({type: 'Point', coordinates: [lng, lat]});
 
-  if (countries && countries.features && countries.features.length > 0) {
+  if (countries.features.length > 0) {
+    // TODO: Remove the usage of the set!
     return [...new Set(countries.features.map(f => f.properties.A3))];
   }
   return [];
