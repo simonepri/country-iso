@@ -44,7 +44,7 @@ async function showInfo(map, latlng) {
 
 const map = leaflet.map('map').setView([0, 0], 1);
 leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 map.on('click', e => {
   const latlng = e.latlng;
