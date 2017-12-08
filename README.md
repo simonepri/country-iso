@@ -3,7 +3,8 @@
 > 🗺 Get ISO 3166-1 alpha-3 country code from geographic coordinates.
 
 <p align="center">
-  <a href="http://simonepri.github.io/country-iso/"><img src="https://raw.githubusercontent.com/simonepri/country-iso/master/demo/index.png" width="400"/></a>
+  <a href="http://simonepri.github.io/country-iso/"><img src="https://raw.githubusercontent.com/simonepri/country-iso/master/
+    /index.png" width="400"/></a>
 </p>
 
 <p align="center">Click on the map to see a live preview.</p>
@@ -12,9 +13,9 @@
 Given the latitude and longitude coordinates this package returns the country code of the country in which the coordinates fall into.
 
 The package internally uses [@geo-maps/countries-maritime](https://github.com/simonepri/geo-maps/blob/master/info/countries-maritime.md) map with 10m resolution to give you the right country code.
-The accuracy of the map has been tested with [23785 cities](fixtures/cities.geo.json) but the demo allows you to actually test it manually by just clicking on the map to see what it returns.
+The accuracy of the map has been tested with [23785 cities](fixtures/cities.geo.json) but the [demo](http://simonepri.github.io/country-iso/) allows you to actually test it manually by just clicking on the map to see what it returns.
 
-Do you believe that this is cool? If so, <a href="#start-of-content">support us with a ⭐️</a>!
+Do you believe that this is useful? If so, <a href="#start-of-content">support us with a ⭐️</a>!
 
 ## Install
 ```bash
