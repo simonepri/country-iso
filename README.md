@@ -3,8 +3,7 @@
 > 🗺 Get ISO 3166-1 alpha-3 country code from geographic coordinates.
 
 <p align="center">
-  <a href="http://simonepri.github.io/country-iso/"><img src="https://raw.githubusercontent.com/simonepri/country-iso/master/
-    /index.png" width="400"/></a>
+  <a href="http://simonepri.github.io/country-iso/"><img src="https://raw.githubusercontent.com/simonepri/country-iso/master/demo/index.png" width="400"/></a>
 </p>
 
 <p align="center">Click on the map to see a live preview.</p>
