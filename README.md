@@ -59,7 +59,7 @@ Searches for every country which contains the point (lat, lng).
 * **Matteo Chen** - [chq-matteo](https://github.com/chq-matteo)
 * **Simone Primarosa** - [simonepri](https://github.com/simonepri)
 
-See also the list of [contributors](https://github.com/simonepri/world-country/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/simonepri/country-iso/contributors) who participated in this project.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
