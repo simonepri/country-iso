@@ -1,12 +1,20 @@
 # country-iso
 [![Travis CI](https://travis-ci.org/simonepri/country-iso.svg?branch=master)](https://travis-ci.org/simonepri/country-iso) [![Codecov](https://img.shields.io/codecov/c/github/simonepri/country-iso/master.svg)](https://codecov.io/gh/simonepri/country-iso) [![npm](https://img.shields.io/npm/dm/country-iso.svg)](https://www.npmjs.com/package/country-iso) [![npm version](https://img.shields.io/npm/v/country-iso.svg)](https://www.npmjs.com/package/country-iso) [![npm dependencies](https://david-dm.org/simonepri/country-iso.svg)](https://david-dm.org/simonepri/country-iso) [![npm dev dependencies](https://david-dm.org/simonepri/country-iso/dev-status.svg)](https://david-dm.org/simonepri/country-iso#info=devDependencies)
-> 🗺 Get ISO 3166-1 alpha-3 country code for geographic coordinates.
+> 🗺 Get ISO 3166-1 alpha-3 country code from geographic coordinates.
 
 <p align="center">
   <a href="http://simonepri.github.io/country-iso/"><img src="https://raw.githubusercontent.com/simonepri/country-iso/master/demo/index.png" width="400"/></a>
 </p>
 
-> Click on the map for a live preview.
+<p align="center">Click on the map to see a live preview.</p>
+
+## Synopsis
+Given the latitude and longitude coordinates this package returns the country code of the country in which the coordinates fall into.
+
+The package internally uses [@geo-maps/countries-maritime](https://github.com/simonepri/geo-maps/blob/master/info/countries-maritime.md) map with 10m resolution to give you the right country code.
+The accuracy of the map has been tested with [23785 cities](fixtures/cities.geo.json) but the demo allows you to actually test it manually by just clicking on the map to see what it returns.
+
+Do you believe that this is cool? If so, <a href="#start-of-content">support us with a ⭐️</a>!
 
 ## Install
 ```bash
@@ -31,9 +39,6 @@ countryIso.get(24, -14);
 countryIso.get(40, -40);
 // => []
 ```
-> The package internally uses [@geo-maps/countries-maritime](https://github.com/simonepri/geo-maps/blob/master/info/countries-maritime.md) map with 10m resolution.
-
-> The accuracy of the map has been tested with [23785 cities](fixtures/cities.geo.json).
 
 ## API
 ## get(lat, lng) ⇒ <code>Array.&lt;string&gt;</code>
@@ -46,6 +51,9 @@ Searches for every country which contains the point (lat, lng).
 | --- | --- | --- |
 | lat | <code>number</code> | The latitude of the point. |
 | lng | <code>number</code> | The longitude of the point. |
+
+## Related
+* [is-sea](https://github.com/simonepri/is-sea): 🌊 Check whether a geographic coordinate is in the sea or not on the earth.
 
 ## Authors
 * **Matteo Chen** - [chq-matteo](https://github.com/chq-matteo)
